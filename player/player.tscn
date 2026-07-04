@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://byque4w54oowj"]
+
+[ext_resource type="Script" uid="uid://bl5rcjuc4es62" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_g1dw6"]
+[ext_resource type="Script" uid="uid://bb28fneg71nss" path="res://player/pause_menu.gd" id="2_rkbax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx8xv"]
+size = Vector2(50, 50)
+
+[node name="player" type="Node2D" unique_id=1378247790]
+script = ExtResource("1_oul6g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1882155421]
+position = Vector2(576, 320)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_g1dw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1864085661]
+position = Vector2(576, 320)
+shape = SubResource("RectangleShape2D_nx8xv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1491523588]
+process_mode = 3
+visible = false
+script = ExtResource("2_rkbax")
+
+[node name="continue_button" type="Button" parent="CanvasLayer" unique_id=1494863755]
+offset_left = 320.0
+offset_top = 192.0
+offset_right = 832.0
+offset_bottom = 291.0
+text = "Continue
+"
+
+[node name="quit_button" type="Button" parent="CanvasLayer" unique_id=786160295]
+offset_left = 384.0
+offset_top = 304.0
+offset_right = 768.0
+offset_bottom = 392.0
+text = "Quit"
+
+[node name="hand" type="Marker2D" parent="." unique_id=2080376918]
+position = Vector2(576, 320)
+
+[node name="Sprite2D" type="Sprite2D" parent="hand" unique_id=1675624760]
